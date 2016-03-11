@@ -1,11 +1,5 @@
-var fs = require('fs');
 var _ = require('lodash');
-
-
-var datums = fs.readFileSync('item-datums.json', 'utf8', (err, data) => {
-    if (err) throw err;
-    return data;
-});
+datums = require('./item-datums-module')
 
 module.exports = {
     parse: function(input) {
@@ -87,8 +81,8 @@ var findBaseType = function(input) {
     var split = input.split('\n');
 
     var name = split[0];
-
-    return _.find(JSON.parse(datums).baseTypes, function(baseType) {
+    debugger
+    return _.find(datums.baseTypes, function(baseType) {
         return _.find(baseType.bases, function(base) {
             return name.toLowerCase().indexOf(base.name.toLowerCase()) > -1;
         });
