@@ -1,0 +1,7 @@
+Miracle Pendant Jade Amulet
+Level: 5 ilvl: 6
++24 to Dexterity
++10 to Intelligence
+6% increased Cast Speed
++7 to maximum Life
++10% to Cold Resistance
