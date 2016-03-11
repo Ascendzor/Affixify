@@ -81,7 +81,6 @@ var findBaseType = function(input) {
     var split = input.split('\n');
 
     var name = split[0];
-    debugger
     return _.find(datums.baseTypes, function(baseType) {
         return _.find(baseType.bases, function(base) {
             return name.toLowerCase().indexOf(base.name.toLowerCase()) > -1;

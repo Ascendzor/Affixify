@@ -44,7 +44,6 @@
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
-	console.log('root js')
 	React = __webpack_require__(1)
 	ReactDOM = __webpack_require__(158)
 	inputter = __webpack_require__(159)
@@ -19675,7 +19674,7 @@
 
 	module.exports = React.createClass({
 	  render: function() {
-	    return React.createElement('h1', null, 'Input hello world')
+	    return React.createElement('textarea', null)
 	  }
 	})
 
@@ -19685,10 +19684,8 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	var _ = __webpack_require__(161);
-
 	datums = __webpack_require__(163)
-	console.log('am logging item')
-	console.log(datums)
+
 	module.exports = {
 	    parse: function(input) {
 	        var result = {};
@@ -19770,7 +19767,7 @@
 
 	    var name = split[0];
 	    debugger
-	    return _.find(JSON.parse(datums).baseTypes, function(baseType) {
+	    return _.find(datums.baseTypes, function(baseType) {
 	        return _.find(baseType.bases, function(base) {
 	            return name.toLowerCase().indexOf(base.name.toLowerCase()) > -1;
 	        });
