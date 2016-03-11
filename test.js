@@ -5,7 +5,7 @@ var toParse = fs.readFileSync('lines.txt', 'utf8', (err, data) => {
     if (err) throw err;
     return data;
 });
-
+console.log(toParse)
 console.log('Affixifying item:\n' + toParse + '...\n');
 
 var something = item.parse(toParse);

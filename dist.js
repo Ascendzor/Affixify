@@ -19671,10 +19671,36 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	React = __webpack_require__(1)
+	item = __webpack_require__(160)
+	itemDisplayer = __webpack_require__(164)
 
 	module.exports = React.createClass({
+	  getInitialState: function() {
+	    return {
+	      inputValue: '',
+	      result: ''
+	    }
+	  },
+	  inputChange: function(e) {
+	    this.setState({
+	      inputValue: e.target.value
+	    }, function() {
+	      console.log(this.state.inputValue)
+	    })
+	  },
+	  doTheThing: function() {
+	    itemInQuestion = this.state.inputValue
+	    debugger
+	    this.setState({
+	      result: item.parse(itemInQuestion)
+	    })
+	  },
 	  render: function() {
-	    return React.createElement('textarea', null)
+	    return React.createElement('div', {},
+	      React.createElement('textarea', {onChange: this.inputChange, rows: 10, cols:50}),
+	      React.createElement('button', {onClick: this.doTheThing}, 'Do the thing!'),
+	      React.createElement(itemDisplayer, {item: this.state.result})
+	    );
 	  }
 	})
 
@@ -19766,7 +19792,6 @@
 	    var split = input.split('\n');
 
 	    var name = split[0];
-	    debugger
 	    return _.find(datums.baseTypes, function(baseType) {
 	        return _.find(baseType.bases, function(base) {
 	            return name.toLowerCase().indexOf(base.name.toLowerCase()) > -1;
@@ -35416,6 +35441,35 @@
 	        }
 	    }
 	}
+
+
+/***/ },
+/* 164 */
+/***/ function(module, exports, __webpack_require__) {
+
+	React = __webpack_require__(1)
+	_ = __webpack_require__(161)
+	module.exports = React.createClass({
+	  render: function() {
+	    itemObject = this.props.item
+	    if(!itemObject) {
+	      return React.createElement('div', {}, 'enter an item')
+	    }
+	    debugger
+	    return React.createElement('div', {},
+	      React.createElement('div', {}, 'base type: ' + itemObject.baseTypeName),
+	      React.createElement('div', {}, 'implicit: ' + itemObject.implicit),
+	      React.createElement('div', {}, 'prefixes: '),
+	      _.map(itemObject.prefixes, function(prefix) {
+	        React.createElement('div', {}, prefix)
+	      }),
+	      React.createElement('div', {}, 'suffixes: '),
+	      _.map(itemObject.suffixes, function(suffix) {
+	        React.createElement('div', {}, suffix)
+	      })
+	    );
+	  }
+	})
 
 
 /***/ }
