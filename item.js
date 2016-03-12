@@ -70,7 +70,7 @@ var findImplicit = function(baseType, affixes, input) {
 }
 
 var getItemAffixes = function(input) {
-    var split = input.split('\r\n');
+    var split = input.split('\n');
 
     var affixes = split.slice(2, split.length);
 

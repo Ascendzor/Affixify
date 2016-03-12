@@ -18,7 +18,6 @@ module.exports = React.createClass({
   },
   doTheThing: function() {
     itemInQuestion = this.state.inputValue
-    debugger
     this.setState({
       result: item.parse(itemInQuestion)
     })
