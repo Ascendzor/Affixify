@@ -1,0 +1,28 @@
+{
+  "name": "affixify",
+  "version": "1.0.0",
+  "description": "",
+  "main": "test.js",
+  "dependencies": {
+    "babel-core": "^6.7.2",
+    "babel-loader": "^6.2.4",
+    "lodash": "^4.6.1",
+    "react": "^0.14.7",
+    "react-dom": "^0.14.7",
+    "webpack": "^1.12.14"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "js": "webpack root.js dist.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ZacharyBil/Affixify.git"
+  },
+  "author": "Bilk",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ZacharyBil/Affixify/issues"
+  },
+  "homepage": "https://github.com/ZacharyBil/Affixify#readme"
+}
